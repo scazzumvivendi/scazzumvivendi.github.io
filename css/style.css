@@ -1,0 +1,83 @@
+:root {
+    --black:#000000;
+    --white:#FFFFFF;
+    --red:#68372B;
+    --cyan:#70A4B2;
+    --violet:#6F3D86;
+    --green:#588D43;
+    --blue:#352879;
+    --yellow:#B8C76F;
+    --orange:#6F4F25;
+    --brown:#433900;
+    --lightred:#9A6759;
+    --darkgrey:#444444;
+    --grey:#6C6C6C;
+    --lightgreen:#9AD284;
+    --lightblue:#6C5EB5;
+    --lightgrey:#959595;
+}
+@font-face {
+    font-family: c64;
+    src: url(../fonts/C64_Pro_Mono-STYLE.ttf);
+}
+
+
+body{
+    font-family: c64;
+    color: var(--lightblue);
+    font-size: 32px;
+    background-color: var(--lightblue);
+}
+
+
+.screen {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 1280px;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--blue);
+}
+
+/* Cursor */
+
+@keyframes blink {
+    0% {opacity:0}
+    49.99% {opacity: 0;}
+    50% {opacity: 1;}
+    99.9% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#cursor {
+    height: 1em;
+    width: 1em;
+    background-color: var(--lightblue);
+    color: var(--blue);
+    animation-name: blink;
+    animation-duration: 0.66s;
+    transition-duration: 0;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
+
+/* Text */
+
+#c64-text{
+    margin:0;
+    padding:0;
+    white-space: pre-wrap;
+    line-height: 32px;
+}
+
+#overlay{
+    margin:0;
+    padding:0;
+    white-space: pre-wrap;
+    line-height: 32px;
+}
