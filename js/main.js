@@ -90,8 +90,8 @@ function moveCursor(deltaX, deltaY) {
         moveScreen(1);
     }
 
-    if (!!textMatrix[currentPosY]) {
-        overlay.textContent = textMatrix[currentPosY][currentPosX];
+    if (!!textMatrix[currentPosY+screenOffset]) {
+        overlay.textContent = textMatrix[currentPosY+screenOffset][currentPosX];
     } else {
         overlay.textContent = "";
     }
