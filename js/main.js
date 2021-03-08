@@ -193,7 +193,7 @@ function handleError() {
         if (!textMatrix[currentPosY + 1+screenOffset]) {
             textMatrix[currentPosY + 1+screenOffset] = [];
         }
-        textMatrix[currentPosY + 1][i] = msg[i];
+        textMatrix[currentPosY + 1+screenOffset][i] = msg[i];
     }
     moveCursor(-currentPosX, 2);
     printTextMatrix(screenOffset);
