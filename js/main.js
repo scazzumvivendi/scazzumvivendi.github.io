@@ -103,7 +103,7 @@ function writeCharacter(char) {
     }
     textMatrix[currentPosY][currentPosX] = char.toUpperCase();
     moveCursor(1, 0);
-    printTextMatrix(screenOffset);
+    printTextMatrix();
 }
 
 function writeStartupScreen() {
