@@ -98,12 +98,12 @@ function moveCursor(deltaX, deltaY) {
 }
 
 function writeCharacter(char) {
-    if (!textMatrix[currentPosY]) {
-        textMatrix[currentPosY] = [];
+    if (!textMatrix[currentPosY+screenOffset]) {
+        textMatrix[currentPosY+screenOffset] = [];
     }
-    textMatrix[currentPosY][currentPosX] = char.toUpperCase();
+    textMatrix[currentPosY+screenOffset][currentPosX] = char.toUpperCase();
     moveCursor(1, 0);
-    printTextMatrix();
+    printTextMatrix(screenOffset);
 }
 
 function writeStartupScreen() {
