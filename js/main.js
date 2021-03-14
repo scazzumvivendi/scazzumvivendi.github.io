@@ -98,10 +98,10 @@ function moveCursor(deltaX, deltaY) {
 }
 
 function writeCharacter(char) {
-    if (!textMatrix[currentPosY]) {
-        textMatrix[currentPosY] = [];
+    if (!textMatrix[currentPosY+screenOffset]) {
+        textMatrix[currentPosY+screenOffset] = [];
     }
-    textMatrix[currentPosY][currentPosX] = char.toUpperCase();
+    textMatrix[currentPosY+screenOffset][currentPosX] = char.toUpperCase();
     moveCursor(1, 0);
     printTextMatrix(screenOffset);
 }
@@ -184,16 +184,16 @@ function handleError() {
     const err = "?SYNTAX ERROR";
     const msg = "READY.";
     for (let i in err) {
-        if (!textMatrix[currentPosY]) {
-            textMatrix[currentPosY] = [];
+        if (!textMatrix[currentPosY+screenOffset]) {
+            textMatrix[currentPosY+screenOffset] = [];
         }
-        textMatrix[currentPosY][i] = err[i];
+        textMatrix[currentPosY+screenOffset][i] = err[i];
     }
     for (let i in msg) {
-        if (!textMatrix[currentPosY + 1]) {
-            textMatrix[currentPosY + 1] = [];
+        if (!textMatrix[currentPosY + 1+screenOffset]) {
+            textMatrix[currentPosY + 1+screenOffset] = [];
         }
-        textMatrix[currentPosY + 1][i] = msg[i];
+        textMatrix[currentPosY + 1+screenOffset][i] = msg[i];
     }
     moveCursor(-currentPosX, 2);
     printTextMatrix(screenOffset);
